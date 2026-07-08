@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<style>
+.hv-acc,.hv-ink,.hv-card,.hv-link{transition:all .18s ease}
+.hv-acc:hover{background:rgba(39,199,255,.14);box-shadow:0 0 26px rgba(39,199,255,.35);transform:translateY(-2px)}
+.hv-ink:hover{background:rgba(244,244,248,.12);box-shadow:0 0 26px rgba(244,244,248,.28);transform:translateY(-2px)}
+.hv-card:hover{transform:translateY(-6px) scale(1.025);border-color:#27c7ff;box-shadow:0 18px 44px rgba(0,0,0,.55),0 0 0 1px rgba(39,199,255,.2)}
+.hv-link:hover{color:#27c7ff}
+@media (prefers-reduced-motion: reduce){.hv-acc,.hv-ink,.hv-card,.hv-link{transition:none}}
+</style>
+</head>
+<body>
+
+
+  <title>Manualclick — Motion Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <style>/* latin-ext */
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/archivo-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/archivo.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/grotesk-viet.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/grotesk-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/grotesk.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/grotesk-viet.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/grotesk-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/grotesk.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/grotesk-viet.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/grotesk-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/grotesk.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+  <style>
+    html{scroll-behavior:smooth;}
+    body{margin:0;background:#08080d;color:#f4f4f8;font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;}
+    a{color:#f4f4f8;}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    @keyframes floatpulse{0%,100%{opacity:.55;transform:scale(1);}50%{opacity:1;transform:scale(1.04);}}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;}}
+  </style>
+
+
+<div id="scroll-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg, #27c7ff, #9fffe0);box-shadow:0 0 10px #27c7ff;z-index:1000;pointer-events:none;"></div>
+
+<!-- ============ HERO ============ -->
+<header data-screen-label="Hero" style="position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;border-bottom:1px solid #1c1c26;">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1.4px);background-size:16px 16px;mask-image:radial-gradient(ellipse at 72% 18%, black 0%, transparent 60%);-webkit-mask-image:radial-gradient(ellipse at 72% 18%, black 0%, transparent 60%);pointer-events:none;"></div>
+  <div id="hero-orb" style="position:absolute;top:-120px;right:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, #27c7ff22 0%, transparent 65%);animation:floatpulse 7s ease-in-out infinite;pointer-events:none;will-change:translate;"></div>
+
+  <div style="max-width:1100px;width:100%;margin:0 auto;padding:96px 28px 64px;box-sizing:border-box;position:relative;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+      <span style="width:9px;height:9px;border-radius:50%;background:#27c7ff;box-shadow:0 0 12px #27c7ff;"></span>
+      <p style="margin:0;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#8a8a99;">Motion design · After Effects · <b style="color:#27c7ff;font-weight:500;">Commissions ouvertes</b></p>
+    </div>
+    <h1 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(56px,10.5vw,128px);line-height:.92;letter-spacing:-.01em;text-transform:uppercase;">Manual<br><span style="color:transparent;-webkit-text-stroke:2px #f4f4f8;">Click</span></h1>
+    <p style="margin:28px 0 0;max-width:580px;font-size:clamp(16px,2vw,19px);line-height:1.6;color:#8a8a99;">Je donne du <strong style="color:#f4f4f8;font-weight:500;">mouvement</strong> aux identités — logos animés, branding complet de serveurs Discord, edits dynamiques. Motion propre, rendu rapide, fichiers prêts à l'emploi.</p>
+    <div style="margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="#work" style="display:inline-block;padding:15px 30px;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid #27c7ff;color:#27c7ff;transition:background .2s,box-shadow .2s,transform .2s;" class="hv-acc">Voir le travail</a>
+      <a href="#contact" style="display:inline-block;padding:15px 30px;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid #f4f4f8;color:#f4f4f8;transition:background .2s,box-shadow .2s,transform .2s;" class="hv-ink">Me contacter</a>
+    </div>
+  </div>
+
+  <!-- marquee -->
+  <div style="position:absolute;bottom:0;left:0;right:0;border-top:1px solid #1c1c26;overflow:hidden;padding:14px 0;background:rgba(8,8,13,.7);">
+    <div style="display:flex;gap:0;width:max-content;animation:marquee 44s linear infinite;">
+      <div style="display:flex;gap:48px;padding-right:48px;font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a99;white-space:nowrap;">
+        <span>Logo animation</span><span style="color:#27c7ff;">✦</span><span>Branding Discord</span><span style="color:#27c7ff;">✦</span><span>Edits dynamiques</span><span style="color:#27c7ff;">✦</span><span>MP4 · MOV alpha · GIF</span><span style="color:#27c7ff;">✦</span><span>Logo animation</span><span style="color:#27c7ff;">✦</span><span>Branding Discord</span><span style="color:#27c7ff;">✦</span><span>Edits dynamiques</span><span style="color:#27c7ff;">✦</span><span>MP4 · MOV alpha · GIF</span><span style="color:#27c7ff;">✦</span>
+      </div>
+      <div style="display:flex;gap:48px;padding-right:48px;font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a99;white-space:nowrap;" aria-hidden="true">
+        <span>Logo animation</span><span style="color:#27c7ff;">✦</span><span>Branding Discord</span><span style="color:#27c7ff;">✦</span><span>Edits dynamiques</span><span style="color:#27c7ff;">✦</span><span>MP4 · MOV alpha · GIF</span><span style="color:#27c7ff;">✦</span><span>Logo animation</span><span style="color:#27c7ff;">✦</span><span>Branding Discord</span><span style="color:#27c7ff;">✦</span><span>Edits dynamiques</span><span style="color:#27c7ff;">✦</span><span>MP4 · MOV alpha · GIF</span><span style="color:#27c7ff;">✦</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SELECTED WORK ============ -->
+<section id="work" data-screen-label="Travaux" style="padding:96px 0;border-bottom:1px solid #1c1c26;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;box-sizing:border-box;">
+    <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:48px;">
+      <span style="font-family:'Archivo Black',sans-serif;font-size:15px;color:#27c7ff;">01</span>
+      <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(28px,4.5vw,44px);text-transform:uppercase;letter-spacing:.01em;">Logos <span style="color:#27c7ff;">animés</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;">
+      <figure style="margin:0;border:1px solid #1c1c26;background:#0e0e16;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;" class="hv-card">
+        <video src="assets/voltage.mp4" autoplay muted loop playsinline preload="metadata" style="display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#0a0a10;"></video>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 18px;border-top:1px solid #1c1c26;">
+          <b style="font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.05em;">Voltage</b>
+          <span style="font-size:12.5px;color:#8a8a99;letter-spacing:.08em;text-transform:uppercase;">Logo animé · esport</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;border:1px solid #1c1c26;background:#0e0e16;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;" class="hv-card">
+        <video src="assets/noctis.mp4" autoplay muted loop playsinline preload="metadata" style="display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#0a0a10;"></video>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 18px;border-top:1px solid #1c1c26;">
+          <b style="font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.05em;">Noctis</b>
+          <span style="font-size:12.5px;color:#8a8a99;letter-spacing:.08em;text-transform:uppercase;">Logo animé · emblème</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLOXKO — PACK DISCORD ============ -->
+<section id="floxko" data-screen-label="Pack Discord Floxko" style="padding:96px 0;border-bottom:1px solid #1c1c26;background:#0c0c13;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;box-sizing:border-box;">
+    <div style="display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:14px;">
+      <span style="font-family:'Archivo Black',sans-serif;font-size:15px;color:#27c7ff;">02</span>
+      <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(28px,4.5vw,44px);text-transform:uppercase;letter-spacing:.01em;">Pack Discord — <span style="color:#27c7ff;">Floxko</span></h2>
+    </div>
+    <p style="margin:0 0 44px;max-width:620px;font-size:16px;line-height:1.6;color:#8a8a99;">Une identité complète livrée en un seul pack : bannière de serveur, logo et version animée — formatés pour Discord, prêts à uploader.</p>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:24px;">
+      <figure style="margin:0;border:1px solid #1c1c26;background:#0e0e16;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;" class="hv-card">
+        <img src="assets/floxko_banner.jpg" alt="Bannière Discord FLOXKO — roses en demi-teinte, typographie bold" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;">
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 18px;border-top:1px solid #1c1c26;">
+          <b style="font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.05em;">Bannière</b>
+          <span style="font-size:12.5px;color:#8a8a99;letter-spacing:.08em;text-transform:uppercase;">Bannière de serveur · 16:9</span>
+        </figcaption>
+      </figure>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <figure style="margin:0;border:1px solid #1c1c26;background:#0e0e16;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;" class="hv-card">
+          <div style="aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%, #1a1a24 0%, #0a0a10 70%);">
+            <img src="assets/fo_logo.png" alt="Logo FO — dégradé menthe" style="width:78%;height:78%;object-fit:contain;">
+          </div>
+          <figcaption style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 18px;border-top:1px solid #1c1c26;">
+            <b style="font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.05em;">Logo FO</b>
+            <span style="font-size:12.5px;color:#8a8a99;letter-spacing:.08em;text-transform:uppercase;">Icône de serveur</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;border:1px solid #1c1c26;background:#0e0e16;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;" class="hv-card">
+          <video src="assets/fo_anim.mp4" autoplay muted loop playsinline preload="metadata" style="display:block;width:100%;aspect-ratio:1/1;object-fit:contain;background:#07070d;"></video>
+          <figcaption style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 18px;border-top:1px solid #1c1c26;">
+            <b style="font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.05em;">Logo FO animé</b>
+            <span style="font-size:12.5px;color:#8a8a99;letter-spacing:.08em;text-transform:uppercase;">Icône animée · GIF ready</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDITS DYNAMIQUES ============ -->
+<section id="edits" data-screen-label="Edits dynamiques" style="padding:96px 0;border-bottom:1px solid #1c1c26;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;box-sizing:border-box;">
+    <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:14px;">
+      <span style="font-family:'Archivo Black',sans-serif;font-size:15px;color:#27c7ff;">03</span>
+      <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(28px,4.5vw,44px);text-transform:uppercase;letter-spacing:.01em;">Edits <span style="color:#27c7ff;">dynamiques</span></h2>
+    </div>
+    <p style="margin:0 0 44px;max-width:620px;font-size:16px;line-height:1.6;color:#8a8a99;">Intros, outros et cuts rythmés avec du vrai motion design par-dessus.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;">
+      <figure style="margin:0;border:1px solid #1c1c26;background:#0e0e16;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;" class="hv-card">
+        <video src="assets/outro_intro.mp4" autoplay muted loop playsinline preload="metadata" style="display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#0a0a10;"></video>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 18px;border-top:1px solid #1c1c26;">
+          <b style="font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.05em;">OUTRO / INTRO</b>
+          <span style="font-size:12.5px;color:#8a8a99;letter-spacing:.08em;text-transform:uppercase;">Titre intro / outro</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;border:1px solid #1c1c26;background:#0e0e16;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;" class="hv-card">
+        <video src="assets/edits.mp4" autoplay muted loop playsinline preload="metadata" style="display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#0a0a10;"></video>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 18px;border-top:1px solid #1c1c26;">
+          <b style="font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.05em;">EDITS DYNAMIQUES</b>
+          <span style="font-size:12.5px;color:#8a8a99;letter-spacing:.08em;text-transform:uppercase;">Edits déjà réalisés</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES + PROCESS ============ -->
+<section id="services" data-screen-label="Services" style="padding:96px 0;border-bottom:1px solid #1c1c26;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;box-sizing:border-box;">
+    <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:48px;">
+      <span style="font-family:'Archivo Black',sans-serif;font-size:15px;color:#27c7ff;">04</span>
+      <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(28px,4.5vw,44px);text-transform:uppercase;letter-spacing:.01em;">Ce que je <span style="color:#27c7ff;">fais</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div style="border:1px solid #1c1c26;padding:28px;background:#0e0e16;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;" class="hv-card">
+        <b style="display:block;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:16px;margin-bottom:12px;">Logo animation</b>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#8a8a99;">Votre logo statique, animé. <b style="color:#f4f4f8;font-weight:500;">4–8s, 2–3 variations</b>, livré en MP4 + MOV alpha + GIF.</p>
+      </div>
+      <div style="border:1px solid #1c1c26;padding:28px;background:#0e0e16;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;" class="hv-card">
+        <b style="display:block;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:16px;margin-bottom:12px;">Branding Discord</b>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#8a8a99;">Le pack identité complet : <b style="color:#f4f4f8;font-weight:500;">icône animée, bannière, intro</b>. Formaté pour Discord.</p>
+      </div>
+      <div style="border:1px solid #1c1c26;padding:28px;background:#0e0e16;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;" class="hv-card">
+        <b style="display:block;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:16px;margin-bottom:12px;">Edits dynamiques</b>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#8a8a99;">Edits avec du vrai motion design — <b style="color:#f4f4f8;font-weight:500;">intros, outros, packaging</b> — pensés pour retenir l'attention.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;margin-top:56px;border:1px solid #1c1c26;">
+      <div style="padding:24px 26px;border-right:1px solid #1c1c26;">
+        <b style="display:block;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:14px;color:#27c7ff;margin-bottom:8px;">1 · Brief</b>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#8a8a99;">Vous envoyez logo / serveur / rushs et l'ambiance voulue. Un message suffit.</p>
+      </div>
+      <div style="padding:24px 26px;border-right:1px solid #1c1c26;">
+        <b style="display:block;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:14px;color:#27c7ff;margin-bottom:8px;">2 · Motion</b>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#8a8a99;">Design et animation dans After Effects. Preview + une révision incluse.</p>
+      </div>
+      <div style="padding:24px 26px;">
+        <b style="display:block;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:14px;color:#27c7ff;margin-bottom:8px;">3 · Livraison</b>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#8a8a99;">Tous les formats : MP4, MOV alpha, GIF Discord. Rendu rapide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" data-screen-label="Contact" style="padding:110px 0;border-bottom:1px solid #1c1c26;position:relative;overflow:hidden;">
+  <div style="position:absolute;bottom:-160px;left:-140px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, #27c7ff1e 0%, transparent 65%);pointer-events:none;"></div>
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;box-sizing:border-box;position:relative;">
+    <p style="margin:0 0 36px;font-family:'Archivo Black',sans-serif;font-size:clamp(32px,5.6vw,60px);text-transform:uppercase;line-height:1.05;">Envie que le vôtre<br><em style="font-style:normal;color:#27c7ff;">bouge</em> ?</p>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:17px;">
+      <li style="display:flex;align-items:baseline;gap:14px;"><span style="color:#8a8a99;font-size:13px;letter-spacing:.2em;text-transform:uppercase;min-width:80px;">Discord</span><a href="#" style="color:#f4f4f8;text-decoration:none;border-bottom:1px solid #27c7ff;transition:color .15s;" class="hv-link">@manualclick</a></li>
+      <li style="display:flex;align-items:baseline;gap:14px;"><span style="color:#8a8a99;font-size:13px;letter-spacing:.2em;text-transform:uppercase;min-width:80px;">Email</span><a href="mailto:manualclick2.0@gmail.com" style="color:#f4f4f8;text-decoration:none;border-bottom:1px solid #27c7ff;transition:color .15s;" class="hv-link">manualclick2.0@gmail.com</a></li>
+      <li style="display:flex;align-items:baseline;gap:14px;"><span style="color:#8a8a99;font-size:13px;letter-spacing:.2em;text-transform:uppercase;min-width:80px;">TikTok</span><a href="https://www.tiktok.com/@manualclick" target="_blank" rel="noopener" style="color:#f4f4f8;text-decoration:none;border-bottom:1px solid #27c7ff;transition:color .15s;" class="hv-link">@manualclick</a></li>
+      <li style="display:flex;align-items:baseline;gap:14px;"><span style="color:#8a8a99;font-size:13px;letter-spacing:.2em;text-transform:uppercase;min-width:80px;">YouTube</span><a href="https://www.youtube.com/@manualclick4329" target="_blank" rel="noopener" style="color:#f4f4f8;text-decoration:none;border-bottom:1px solid #27c7ff;transition:color .15s;" class="hv-link">@manualclick4329</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer style="padding:36px 0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;box-sizing:border-box;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:#8a8a99;font-size:13px;letter-spacing:.05em;">
+    <span>Manualclick — motion design.</span>
+    <span style="color:#27c7ff;">Commissions ouvertes</span>
+  </div>
+</footer>
+
+<script type="text/x-dc" data-dc-script="" data-props="{
+  &quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#27c7ff&quot;, &quot;options&quot;: [&quot;#27c7ff&quot;, &quot;#9fffe0&quot;, &quot;#ff5c7a&quot;, &quot;#ffd166&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Style&quot;},
+  &quot;autoplay&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Vidéos&quot;}
+}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const kick = () => {
+      document.querySelectorAll('video').forEach((v) => {
+        v.muted = true;
+        if ((this.props.autoplay ?? true) && v.paused) {
+          const p = v.play();
+          if (p && p.catch) p.catch(() => {});
+        }
+      });
+    };
+    kick();
+    this._kicks = [600, 1500, 3000, 6000].map((t) => setTimeout(kick, t));
+
+    // Barre de progression du scroll
+    this._onScroll = () => {
+      const bar = document.getElementById('scroll-progress');
+      if (!bar) return;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+
+    // Halo du hero qui suit la souris
+    this._onMove = (e) => {
+      const orb = document.getElementById('hero-orb');
+      if (!orb) return;
+      const dx = (e.clientX / window.innerWidth - 0.5) * 60;
+      const dy = (e.clientY / window.innerHeight - 0.5) * 60;
+      orb.style.translate = dx + 'px ' + dy + 'px';
+    };
+    window.addEventListener('mousemove', this._onMove, { passive: true });
+
+    // Apparition des cartes au scroll
+    this._setupReveal = setTimeout(() => {
+      const els = document.querySelectorAll('figure, #services > div > div > div');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          const el = en.target;
+          el.style.opacity = '';
+          el.style.transform = '';
+          setTimeout(() => { el.style.transition = ''; }, 700);
+          io.unobserve(el);
+        });
+      }, { threshold: 0.12 });
+      els.forEach((el, i) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.9) return; // déjà visible : ne pas cacher
+        el.style.transition = 'opacity .6s ease ' + ((i % 3) * 0.08) + 's, transform .6s cubic-bezier(.2,.8,.2,1) ' + ((i % 3) * 0.08) + 's';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(26px)';
+        io.observe(el);
+      });
+      this._io = io;
+    }, 800);
+  }
+  componentWillUnmount() {
+    (this._kicks || []).forEach(clearTimeout);
+    clearTimeout(this._setupReveal);
+    if (this._io) this._io.disconnect();
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('mousemove', this._onMove);
+  }
+  renderVals() {
+    return {
+      accent: this.props.accent ?? '#27c7ff',
+      autoplay: this.props.autoplay ?? true,
+      true: true,
+    };
+  }
+}
+</script>
+
+
+
+<script>
+document.querySelectorAll('video').forEach(v=>{v.muted=true;v.loop=true;v.playsInline=true;v.autoplay=true;v.play().catch(()=>{});});
+const sp=document.getElementById('scroll-progress');
+if(sp){addEventListener('scroll',()=>{const h=document.documentElement;sp.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});}
+</script>
+</body></html>
